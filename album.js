@@ -30,7 +30,7 @@ albums.get('/', (req, res) => {
   request(options).then(response => {
     const parsedData = JSON.parse(response);
     let dataObj = parsedData.photos.data;
-    res.json(dataObj);
+    res.json({ data: dataObj });
   });
 });
 
