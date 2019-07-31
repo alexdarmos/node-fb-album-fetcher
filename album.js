@@ -29,16 +29,8 @@ albums.get('/', (req, res) => {
 
   request(options).then(response => {
     const parsedData = JSON.parse(response);
-    let photoGallery = [];
-    // console.log(parsedData.photos.data[0].images[0].source);
-
-    let dataObj = parsedData;
-    console.log(dataObj);
-    res.send(dataObj);
-    // dataObj.forEach((item, index) => {
-    //   photoGallery.push(item.source);
-    // });
-    // res.send(photoGallery);
+    let dataObj = parsedData.photos.data;
+    res.json(dataObj);
   });
 });
 
