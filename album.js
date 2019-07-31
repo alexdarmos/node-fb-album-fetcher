@@ -32,12 +32,13 @@ albums.get('/', (req, res) => {
     let photoGallery = [];
     // console.log(parsedData.photos.data[0].images[0].source);
 
-    let dataObj = parsedData.photos.data[0].images;
-    // console.log(dataObj);
-    dataObj.forEach((item, index) => {
-      photoGallery.push(item.source);
-    });
-    res.send(photoGallery);
+    let dataObj = parsedData;
+    console.log(dataObj);
+    res.send(dataObj);
+    // dataObj.forEach((item, index) => {
+    //   photoGallery.push(item.source);
+    // });
+    // res.send(photoGallery);
   });
 });
 
